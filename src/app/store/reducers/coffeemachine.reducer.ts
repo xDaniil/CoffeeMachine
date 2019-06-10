@@ -1,4 +1,4 @@
-import { initialState } from '../state/coffeeMachine.state';
+import { initialState } from '../state/machine.state';
 import * as coffeeAction from '../actions/coffee.action';
 import { ICoffeeParams, ICoffeeResources, IUser } from 'src/app/models/coffeeMachine';
 

@@ -1,5 +1,5 @@
 import { IUserState, initialUserState } from './user.state';
-import { ICoffeeMachineState, initialCoffeeMachineState } from './coffeeMachine.state';
+import { ICoffeeMachineState, initialCoffeeMachineState } from './machine.state';
 
 export interface IAppState {
   user: IUserState;
