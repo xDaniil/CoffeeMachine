@@ -18,7 +18,7 @@ export const machineReducers = (
         resources: action.payload,
       };
     }
-    case EMachineActions.InsertedCoin: {
+    case EMachineActions.InsertCoinSuccess: {
       return {
         ...state,
         isCoinInserted: true,

@@ -13,7 +13,7 @@ export const userReducers = (
         money: action.payload.money,
       };
     }
-    case EUserActions.InsertedCoin: {
+    case EUserActions.InsertCoinSuccess: {
       return {
         ...state,
         money: state.money - 1,

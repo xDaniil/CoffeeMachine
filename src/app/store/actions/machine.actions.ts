@@ -5,8 +5,7 @@ import { ICoffeeParams } from '../../models/coffeeParams.interface';
 export enum EMachineActions {
   UpdateResources = '[Coffee Machine] Update Resources',
   UpdateParams = '[Coffee Machine] Update Parameters',
-  InsertCoin = '[Coffee Machine] Insert Coin',
-  InsertedCoin = '[Coffee Machine] Inserted Coin',
+  InsertCoinSuccess = '[Coffee Machine] Inserted Coin',
   RemoveCup = '[Coffee Machine] Remove Cup',
   StartBrew = '[Coffee Machine] Start Brew',
   StartedBrew = '[Coffee Machine] Started Brew',
@@ -23,12 +22,8 @@ export class UpdateParams implements Action {
   constructor(public payload: ICoffeeParams) {}
 }
 
-export class InsertCoin implements Action {
-  public readonly type = EMachineActions.InsertCoin;
-}
-
-export class InsertedCoin implements Action {
-  public readonly type = EMachineActions.InsertedCoin;
+export class InsertCoinSuccess implements Action {
+  public readonly type = EMachineActions.InsertCoinSuccess;
 }
 
 export class RemoveCup implements Action {
@@ -46,4 +41,4 @@ export class FinishBrew implements Action {
   public readonly type = EMachineActions.FinishBrew;
 }
 
-export type MachineActions = UpdateResources | UpdateParams | InsertCoin | InsertedCoin | RemoveCup | StartBrew | StartedBrew | FinishBrew;
+export type MachineActions = UpdateResources | UpdateParams | InsertCoinSuccess | RemoveCup | StartBrew | StartedBrew | FinishBrew;

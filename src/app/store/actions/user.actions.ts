@@ -3,7 +3,9 @@ import { IUser } from '../../models/user.interface';
 
 export enum EUserActions {
   UpdateBalance = '[User] Update Balance',
-  InsertedCoin = '[User] Inserted Coin',
+  InsertCoin = '[User] Insert Coin',
+  InsertCoinSuccess = '[User] Insert Coin Success',
+  InsertCoinFail = '[User] Insert Coin Fail',
 }
 
 export class UpdateBalance implements Action {
@@ -11,8 +13,16 @@ export class UpdateBalance implements Action {
   constructor(public payload: IUser) {}
 }
 
-export class InsertedCoin implements Action {
-  public readonly type = EUserActions.InsertedCoin;
+export class InsertCoin implements Action {
+  public readonly type = EUserActions.InsertCoin;
 }
 
-export type UserActions = UpdateBalance | InsertedCoin;
+export class InsertCoinSuccess implements Action {
+  public readonly type = EUserActions.InsertCoinSuccess;
+}
+
+export class InsertCoinFail implements Action {
+  public readonly type = EUserActions.InsertCoinFail;
+}
+
+export type UserActions = UpdateBalance | InsertCoin | InsertCoinSuccess | InsertCoinFail;
