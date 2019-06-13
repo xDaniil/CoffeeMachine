@@ -12,7 +12,7 @@ import { GetCoin } from '../store/actions/user.actions';
 })
 export class UserResComponent implements OnInit {
 
-  userMoney = this._store.pipe(select(getUserData))
+  userMoney = this._store.pipe(select(getUserData));
 
   constructor(private _store: Store<IAppState>) { }
 
