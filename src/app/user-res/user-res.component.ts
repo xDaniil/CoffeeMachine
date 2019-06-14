@@ -1,23 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-
-import { getUserData } from '../store/selectors/user.selectors';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IUserState } from '../store/state/user.state';
+import { Store } from '@ngrx/store';
 import { IAppState } from '../store/state/app.state';
-import { GetCoin } from '../store/actions/user.actions';
+import { getUser } from '../store/selectors/user.selectors';
 
 @Component({
   selector: 'app-user-res',
   templateUrl: './user-res.component.html',
   styleUrls: ['./user-res.component.css']
 })
-export class UserResComponent implements OnInit {
+export class UserResComponent {
 
-  userMoney$ = this._store.pipe(select(getUserData));
+  formState$: Observable<IUserState>;
 
-  constructor(private _store: Store<IAppState>) { }
-
-  ngOnInit() {
-    this._store.dispatch(new GetCoin());
+  constructor(private _store: Store<IAppState>) {
+    this.formState$ = _store.select(getUser);
   }
 
 }

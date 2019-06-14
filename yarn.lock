@@ -4719,12 +4719,10 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-ngrx-forms@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/ngrx-forms/-/ngrx-forms-5.0.2.tgz#367feec8fec40506ac460f416f4b7dfbbf6e1073"
-  integrity sha512-KMTdyYb20ZfYgwcQBdQkn5H4RI52ZpODQ//oNu1NPhlsolfU90ZBr995/Hm9isdjuXs/qGD5uJV9+ouOeEEuiw==
-  dependencies:
-    tslib "^1.9.0"
+ngrx-forms@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/ngrx-forms/-/ngrx-forms-4.1.0.tgz#195b50c1c12b7b796970417130145f675e7daa32"
+  integrity sha512-j+Dap2VAiIZ8k7Z6ofZLSA/xYfhwSBU317nntveYDDRcCtk3bdVl3h38ZX4MH98Ojrn3TvuIsJlHFBoWm9SNsw==
 
 nice-try@^1.0.4:
   version "1.0.5"

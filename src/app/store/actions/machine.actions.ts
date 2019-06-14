@@ -10,7 +10,6 @@ export enum EMachineActions {
   StartBrew = '[Coffee Machine] Start Brew',
   StartedBrew = '[Coffee Machine] Started Brew',
   FinishBrew = '[Coffee Machine] Finish Brew',
-  GetMachine = '[Coffee Machine] Get Machine'
 }
 
 export class UpdateResources implements Action {
@@ -42,8 +41,4 @@ export class FinishBrew implements Action {
   public readonly type = EMachineActions.FinishBrew;
 }
 
-export class GetMachine implements Action {
-  public readonly type = EMachineActions.GetMachine;
-}
-
-export type MachineActions = UpdateResources | UpdateParams | InsertCoinSuccess | RemoveCup | StartBrew | StartedBrew | FinishBrew | GetMachine;
+export type MachineActions = UpdateResources | UpdateParams | InsertCoinSuccess | RemoveCup | StartBrew | StartedBrew | FinishBrew;
