@@ -7,5 +7,5 @@ const getUser = (state: IAppState) => state.user;
 
 export const getUserData = createSelector(
   getUser,
-  (state: IUserState) => state.money,
+  (state: IUserState) => state.value,
 );

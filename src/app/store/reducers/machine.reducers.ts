@@ -1,5 +1,8 @@
 import { ICoffeeMachineState, initialCoffeeMachineState } from '../state/machine.state';
 import { EMachineActions, MachineActions } from '../actions/machine.actions';
+import { createFormGroupState } from 'ngrx-forms';
+import { ICoffeeResources } from '../../models/coffeeResources.interface';
+import { FormNames } from '../forms/formNames';
 
 export const machineReducers = (
   state = initialCoffeeMachineState,
@@ -15,7 +18,7 @@ export const machineReducers = (
     case EMachineActions.UpdateResources: {
       return {
         ...state,
-        resources: action.payload,
+        resources: createFormGroupState<ICoffeeResources>(FormNames.MachineResourcesForm, action.payload),
       };
     }
     case EMachineActions.InsertCoinSuccess: {

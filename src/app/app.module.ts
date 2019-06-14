@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { appReducers } from './store/reducers/app.reducers';
 import { MachineResComponent } from './machine-res/machine-res.component';
 import { UserResComponent } from './user-res/user-res.component';
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NgrxFormsModule } from 'ngrx-forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { UserResComponent } from './user-res/user-res.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgrxFormsModule,
     StoreModule.forRoot(appReducers),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
   bootstrap: [AppComponent]

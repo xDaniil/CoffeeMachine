@@ -10,13 +10,19 @@ export const userReducers = (
     case EUserActions.UpdateBalance: {
       return {
         ...state,
-        money: action.payload.money,
+        value: {
+          ...(state.value),
+          money: action.payload.money,
+        }
       };
     }
     case EUserActions.InsertCoinSuccess: {
       return {
         ...state,
-        money: state.money - 1,
+        value: {
+          ...(state.value),
+          money: state.value.money - 1,
+        }
       };
     }
     default:
