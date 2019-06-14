@@ -1,8 +1,10 @@
+<h1>User res:</h1>
 <form novalidate [ngrxFormState]="(formState$ | async)">
   <label>
+    Money:
     <input type="number"
     [ngrxFormControlState]="(formState$ | async).controls.money">
   </label>
 </form>
 
-<h1>{{(formState$ | async).value.money}}</h1>
+<h3>{{(formState$ | async).value.money}}</h3>

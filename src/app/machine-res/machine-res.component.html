@@ -1,0 +1,38 @@
+<h1>Machine res:</h1>
+<form novalidate [ngrxFormState]="(formState$ | async)">
+  <label>
+    Arabica:
+    <input type="number"
+    [ngrxFormControlState]="(formState$ | async).controls.arabica">
+  </label>
+  <br>
+  <label>
+    Arabusta:
+    <input type="number"
+    [ngrxFormControlState]="(formState$ | async).controls.arabusta">
+  </label>
+  <br>
+  <label>
+    Cream:
+    <input type="number"
+    [ngrxFormControlState]="(formState$ | async).controls.cream">
+  </label>
+  <br>
+  <label>
+    Sugar:
+    <input type="number"
+    [ngrxFormControlState]="(formState$ | async).controls.sugar">
+  </label>
+  <br>
+  <label>
+    Plastic cups:
+    <input type="number"
+    [ngrxFormControlState]="(formState$ | async).controls.plasticCup">
+  </label>
+  <br>
+  <label>
+    Cardboard cups:
+    <input type="number"
+    [ngrxFormControlState]="(formState$ | async).controls.cardCup">
+  </label>
+</form>

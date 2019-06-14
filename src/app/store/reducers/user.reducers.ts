@@ -1,13 +1,19 @@
 import { IUserState } from '../state/user.state';
 import { initialUserState } from '../state/user.state';
 import { EUserActions, UserActions } from '../actions/user.actions';
-import { formGroupReducer } from 'ngrx-forms';
+import { createFormStateReducerWithUpdate, updateGroup, validate } from 'ngrx-forms';
+import { IUser } from '../../models/user.interface';
+import { greaterThanOrEqualTo, required } from 'ngrx-forms/validation';
+
+const userResFormReducer = createFormStateReducerWithUpdate<IUser>(updateGroup<IUser>({
+  money: validate([required, greaterThanOrEqualTo(0)]),
+}));
 
 export const userReducers = (
   state = initialUserState,
   action: UserActions
 ): IUserState => {
-  const userResForm = formGroupReducer(state, action);
+  const userResForm = userResFormReducer(state, action);
   if (userResForm !== state) {
     state = {
       ...state,
