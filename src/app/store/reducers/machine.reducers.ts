@@ -1,6 +1,6 @@
 import { ICoffeeMachineState, initialCoffeeMachineState } from '../state/machine.state';
 import { EMachineActions, MachineActions } from '../actions/machine.actions';
-import { createFormGroupState } from 'ngrx-forms';
+import { createFormGroupState, formGroupReducer } from 'ngrx-forms';
 import { ICoffeeResources } from '../../models/coffeeResources.interface';
 import { FormNames } from '../forms/formNames';
 
@@ -8,6 +8,14 @@ export const machineReducers = (
   state = initialCoffeeMachineState,
   action: MachineActions
 ): ICoffeeMachineState => {
+  const machineResForm = formGroupReducer(state.resources, action);
+  if (state.resources !== machineResForm) {
+    state = {
+      ...state,
+      resources: machineResForm,
+    };
+  }
+
   switch (action.type) {
     case EMachineActions.UpdateParams: {
       return {
