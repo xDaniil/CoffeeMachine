@@ -1,5 +1,6 @@
 <div>
 <h1>User res:</h1>
+<div *ngIf="condition">
 <form novalidate [ngrxFormState]="(formState$ | async)">
   <label for="Money">  </label>
     Money:
@@ -7,4 +8,5 @@
     class="form-control form-control-sm"
     [ngrxFormControlState]="(formState$ | async).controls.money">
 </form>
+</div>
 </div>
