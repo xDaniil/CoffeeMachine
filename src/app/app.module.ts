@@ -11,6 +11,8 @@ import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NgrxFormsModule } from 'ngrx-forms';
 import { CoffeeMachineComponent } from './coffee-machine/coffee-machine.component';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './store/effects/user.effects';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { CoffeeMachineComponent } from './coffee-machine/coffee-machine.componen
     AppRoutingModule,
     NgrxFormsModule,
     StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([UserEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],

@@ -6,7 +6,6 @@ export enum EUserActions {
   InsertCoin = '[User] Insert Coin',
   InsertCoinSuccess = '[User] Insert Coin Success',
   InsertCoinFail = '[User] Insert Coin Fail',
-  GetCoin = '[User] Get Coin'
 }
 
 export class UpdateBalance implements Action {
@@ -24,10 +23,7 @@ export class InsertCoinSuccess implements Action {
 
 export class InsertCoinFail implements Action {
   public readonly type = EUserActions.InsertCoinFail;
-}
-
-export class GetCoin implements Action {
-  public readonly type = EUserActions.GetCoin;
+  constructor(public payload: String) {}
 }
 
 export type UserActions = UpdateBalance | InsertCoin | InsertCoinSuccess | InsertCoinFail;

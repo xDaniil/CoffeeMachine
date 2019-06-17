@@ -22,7 +22,7 @@ export class UpdateParams implements Action {
   constructor(public payload: ICoffeeParams) {}
 }
 
-export class InsertCoinSuccess implements Action {
+export class MachineInsertCoinSuccess implements Action {
   public readonly type = EMachineActions.InsertCoinSuccess;
 }
 
@@ -41,4 +41,4 @@ export class FinishBrew implements Action {
   public readonly type = EMachineActions.FinishBrew;
 }
 
-export type MachineActions = UpdateResources | UpdateParams | InsertCoinSuccess | RemoveCup | StartBrew | StartedBrew | FinishBrew;
+export type MachineActions = UpdateResources | UpdateParams | MachineInsertCoinSuccess | RemoveCup | StartBrew | StartedBrew | FinishBrew;
