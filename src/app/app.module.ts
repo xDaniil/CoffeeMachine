@@ -10,12 +10,14 @@ import { UserResComponent } from './user-res/user-res.component';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NgrxFormsModule } from 'ngrx-forms';
+import { CoffeeMachineComponent } from './coffee-machine/coffee-machine.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MachineResComponent,
-    UserResComponent
+    UserResComponent,
+    CoffeeMachineComponent
   ],
   imports: [
     BrowserModule,
