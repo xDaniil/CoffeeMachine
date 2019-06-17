@@ -13,6 +13,7 @@ import { NgrxFormsModule } from 'ngrx-forms';
 import { CoffeeMachineComponent } from './coffee-machine/coffee-machine.component';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/effects/user.effects';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UserEffects } from './store/effects/user.effects';
     BrowserModule,
     AppRoutingModule,
     NgrxFormsModule,
+    FormsModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([UserEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],

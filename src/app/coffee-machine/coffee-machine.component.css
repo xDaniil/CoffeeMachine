@@ -1,0 +1,88 @@
+.machine {
+  margin: 0 auto;
+  max-width: 400px;
+  min-width: 200px;
+}
+
+.machine-base {
+  z-index: 5;
+}
+
+.machine-base-rect {
+  width: 100%;
+  height: 30px;
+  background-color: #4D4C4C;
+  border-radius: 5px;
+}
+
+.machine-base-trapeze {
+  width: 97.5%;
+  margin: 0 auto;
+  border-bottom: 30px solid;
+  border-color: #292929;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+}
+
+.machine-stand {
+  width: 75%;
+  height: 350px;
+  background-color: #4D4C4C;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  z-index: -1;
+}
+
+.machine-top {
+  position: relative;
+  top: 115px;
+  margin-top: -115px;
+}
+
+.machine-ejector {
+  width: 65px;
+  height: 65px;
+  position: relative;
+  margin: 0 auto;
+  background-color: #C4C4C4;
+  border-radius: 0 0 33px 33px;
+}
+
+.machine-display {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: #222222;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.form-group {
+  display: inline-block;
+  margin: 0;
+}
+
+.machine-button {
+  margin: 0 auto;
+  display: inline-block;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#sugarInput {
+  width: 12%;
+  margin-left: 5px;
+}
+
+#creamCheck {
+  margin-left: 5px;
+}
+
+.machine-button-start {
+  float: right;
+}

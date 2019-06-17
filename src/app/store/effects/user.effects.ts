@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 
 import { IAppState } from '../state/app.state';
 
@@ -9,7 +9,6 @@ import { InsertCoin,
          InsertCoinFail,
          EUserActions} from '../actions/user.actions';
 import { map, withLatestFrom } from 'rxjs/operators';
-import { getUserData } from '../selectors/user.selectors';
 import { MachineInsertCoinSuccess } from '../actions/machine.actions';
 
 @Injectable()
