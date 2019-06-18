@@ -36,6 +36,7 @@ export class StartBrew implements Action {
 
 export class StartedBrew implements Action {
   public readonly type = EMachineActions.StartedBrew;
+  constructor(public payload: ICoffeeParams) {}
 }
 export class FinishBrew implements Action {
   public readonly type = EMachineActions.FinishBrew;
