@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StoreModule, ActionReducerMap } from '@ngrx/store';
+import { ActionReducer, MetaReducer, StoreModule } from '@ngrx/store';
+import { localStorageSync } from 'ngrx-store-localstorage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -15,7 +16,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/effects/user.effects';
 import { FormsModule } from '@angular/forms';
 import { MachineEffects } from './store/effects/machine.effects';
-import { LocalStorageSync } from './store/effects/localStorage.effect';
+
+export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
+  return localStorageSync({
+    keys: ['user', 'machine'],
+    rehydrate: true,
+  })(reducer);
+}
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 @NgModule({
   declarations: [
@@ -29,8 +37,8 @@ import { LocalStorageSync } from './store/effects/localStorage.effect';
     AppRoutingModule,
     NgrxFormsModule,
     FormsModule,
-    StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([UserEffects, MachineEffects, LocalStorageSync]),
+    StoreModule.forRoot(appReducers, { metaReducers }),
+    EffectsModule.forRoot([UserEffects, MachineEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
