@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, ActionReducerMap } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -14,6 +14,8 @@ import { CoffeeMachineComponent } from './coffee-machine/coffee-machine.componen
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/effects/user.effects';
 import { FormsModule } from '@angular/forms';
+import { MachineEffects } from './store/effects/machine.effects';
+import { LocalStorageSync } from './store/effects/localStorage.effect';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     NgrxFormsModule,
     FormsModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([UserEffects]),
+    EffectsModule.forRoot([UserEffects, MachineEffects, LocalStorageSync]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],

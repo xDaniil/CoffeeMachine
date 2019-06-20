@@ -283,6 +283,13 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@larscom/ngrx-store-storagesync@^5.6.0":
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/@larscom/ngrx-store-storagesync/-/ngrx-store-storagesync-5.6.0.tgz#62670ee9410d1eb410c1ba877631b3ee0211aab9"
+  integrity sha512-J/5tCHdYJbIi6RGZwGmNjtJbqYlRwW/KqbdpQMQcFU+k1gC61shOTwAg78h6K9A2HOKAfbw1ZEIMNABmBEUhpA==
+  dependencies:
+    lodash "^4.17.11"
+
 "@ngrx/effects@^8.0.0":
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-8.0.0.tgz#56da399423c2d8c690d9f38971f5fd4234ee8bb2"
@@ -2016,6 +2023,11 @@ deep-extend@^0.6.0:
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
   integrity sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==
 
+deep-freeze-strict@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/deep-freeze-strict/-/deep-freeze-strict-1.1.1.tgz#77d0583ca24a69be4bbd9ac2fae415d55523e5b0"
+  integrity sha1-d9BYPKJKab5LvZrC+uQV1VUj5bA=
+
 deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
@@ -3323,6 +3335,11 @@ iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
+idb@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/idb/-/idb-4.0.3.tgz#b454a51ba0c45038a9a7be6898ca996aa74f9a37"
+  integrity sha512-moRlNNe0Gsvp4jAwz5cJ7scjyNTVA/cESKGCobULaljfaKZ970y8NDNCseHdMY+YxNXH58Z1V+7tTyf0GZyKqw==
+
 ieee754@^1.1.4:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.13.tgz#ec168558e95aa181fd87d37f55c32bbcb6708b84"
@@ -4251,6 +4268,11 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
+lodash.merge@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
+  integrity sha512-AOYza4+Hf5z1/0Hztxpm2/xiPZgi/cjMqdnKTUWTBSKchJlxXXuUSxCCl8rJlf4g6yww/j6mA8nC8Hw/EZWxKQ==
+
 lodash.mergewith@^4.6.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
@@ -4728,6 +4750,20 @@ ngrx-forms@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/ngrx-forms/-/ngrx-forms-4.1.0.tgz#195b50c1c12b7b796970417130145f675e7daa32"
   integrity sha512-j+Dap2VAiIZ8k7Z6ofZLSA/xYfhwSBU317nntveYDDRcCtk3bdVl3h38ZX4MH98Ojrn3TvuIsJlHFBoWm9SNsw==
+
+ngrx-store-freeze@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/ngrx-store-freeze/-/ngrx-store-freeze-0.2.4.tgz#146687cdf7e21244eb9003c7e883f2125847076c"
+  integrity sha512-90awpbbMa/x2H81eWWYniyli3LJ1PZU/FaztL10d9Rp/4kw2+97pqyLjdxSPxcOv9St//m9kfuWZ7gyoVDjgcg==
+  dependencies:
+    deep-freeze-strict "^1.1.1"
+
+ngrx-store-localstorage@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/ngrx-store-localstorage/-/ngrx-store-localstorage-7.0.0.tgz#86d52e1016243acf5dad80cdb86fb8f0adde76bb"
+  integrity sha512-Bpu4C1tA4L3tyD0x4rf+ff52ZAhQskWy7AWr7iREmJfh89sYA1bsRjWNr0PL1gRmEP+1l7V2cUKCH/DhLCDInQ==
+  dependencies:
+    lodash.merge "^4.6.1"
 
 nice-try@^1.0.4:
   version "1.0.5"

@@ -7,8 +7,7 @@ import { IAppState } from '../state/app.state';
 import { StartBrew,
          StartedBrew,
          EMachineActions } from '../actions/machine.actions';
-import { map, withLatestFrom } from 'rxjs/operators';
-import { CoffeeMachineComponent } from '../../coffee-machine/coffee-machine.component';
+import { map, withLatestFrom, delay } from 'rxjs/operators';
 
 @Injectable()
 export class MachineEffects {
@@ -18,8 +17,9 @@ export class MachineEffects {
     ofType<StartBrew>(EMachineActions.StartBrew),
     withLatestFrom(this._store),
     map(([action, state]) => {
-      const params = CoffeeMachineComponent.prototype.params;
-      const coffeeType = params.coffeeType === 1 ? 'arabica' : 'arabusta';
+      const params = state.machine.params;
+      const coffeeType = (params.coffeeType === 1 ? 'arabica' : 'arabusta');
+      console.log(coffeeType);
       const cupType = params.isCupPlastic ? 'plastic' : 'card';
       if (state.machine.isCoinInserted && state.machine.isCupInside !== true &&
         state.machine.resources.value[coffeeType] >= 1 &&
@@ -27,8 +27,9 @@ export class MachineEffects {
         state.machine.resources.value.cream > Number(params.isCreamed) &&
         state.machine.resources.value[`${cupType}Cup`] >= 1
       ) {
-        return new StartedBrew(params);
-      }
+        return new StartedBrew(params)
+      } return console.log(1);
+
     })
   );
 
