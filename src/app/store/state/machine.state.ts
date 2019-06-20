@@ -13,6 +13,7 @@ export const initialCoffeeMachineState: ICoffeeMachineState = {
   isCoinInserted: false,
   isCupInside: false,
   isRunning: false,
+  brewStartTime: null,
   resources: createFormGroupState<ICoffeeResources>(FormNames.MachineResourcesForm, {
     arabica: 0,
     arabusta: 0,

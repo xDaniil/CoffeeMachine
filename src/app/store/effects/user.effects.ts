@@ -6,7 +6,7 @@ import { IAppState } from '../state/app.state';
 
 import { InsertCoin,
          InsertCoinSuccess,
-         InsertCoinFail,
+         UserErrorMessage,
          EUserActions} from '../actions/user.actions';
 import { map, withLatestFrom } from 'rxjs/operators';
 import { MachineInsertCoinSuccess } from '../actions/machine.actions';
@@ -18,15 +18,15 @@ export class UserEffects {
   insertCoin$ = this._actions$.pipe(
     ofType<InsertCoin>(EUserActions.InsertCoin),
     withLatestFrom(this._store),
-    map(([action, state]) => {
+    map(([, state]) => {
       if (state.machine.isCoinInserted) {
-        return new InsertCoinFail('Coin already inserted!');
+        return new UserErrorMessage('Coin already inserted!');
       }
       if (state.user.value.money > 0) {
         this._store.dispatch(new InsertCoinSuccess());
         return new MachineInsertCoinSuccess();
       }
-      return new InsertCoinFail('Not enough money!');
+      return new UserErrorMessage('Not enough money!');
     })
   );
 

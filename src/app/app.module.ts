@@ -19,7 +19,9 @@ import { MachineEffects } from './store/effects/machine.effects';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
-    keys: ['user', 'machine'],
+    keys: ['user', {
+      machine: ['resources', 'isCoinInserted', 'isCupInside', 'isRunning', 'brewStartTime'],
+    }],
     rehydrate: true,
   })(reducer);
 }

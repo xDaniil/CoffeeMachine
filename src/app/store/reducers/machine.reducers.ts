@@ -53,7 +53,6 @@ export const machineReducers = (
         ...state,
         isRunning: true,
         isCupInside: true,
-        isCoinInserted: false,
         resources: {
         ...createFormGroupState<ICoffeeResources>(FormNames.MachineResourcesForm, {
           ...state.resources.value,
@@ -65,7 +64,6 @@ export const machineReducers = (
        }
       };
     }
-
     case EMachineActions.RemoveCup: {
       return {
         ...state,
@@ -76,6 +74,13 @@ export const machineReducers = (
       return {
         ...state,
         isRunning: false,
+        isCoinInserted: false,
+      };
+    }
+    case EMachineActions.SaveStartTime: {
+      return {
+        ...state,
+        brewStartTime: action.payload
       };
     }
     default:

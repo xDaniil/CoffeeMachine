@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ICoffeeParams } from '../models/coffeeParams.interface';
 import { Store } from '@ngrx/store';
 import { IAppState } from '../store/state/app.state';
-import { StartBrew, UpdateParams } from '../store/actions/machine.actions';
+import { BrewStateCheck, StartBrew, UpdateParams } from '../store/actions/machine.actions';
 
 @Component({
   selector: 'app-coffee-machine',
   templateUrl: './coffee-machine.component.html',
   styleUrls: ['./coffee-machine.component.css']
 })
-export class CoffeeMachineComponent {
+export class CoffeeMachineComponent implements OnInit {
   params: ICoffeeParams = {
     coffeeType: null,
     sugar: 0,
@@ -21,5 +21,9 @@ export class CoffeeMachineComponent {
   startBrew() {
     this._store.dispatch(new UpdateParams(this.params));
     this._store.dispatch(new StartBrew());
+  }
+
+  ngOnInit(): void {
+    this._store.dispatch(new BrewStateCheck());
   }
 }
