@@ -29,9 +29,19 @@
       </div>
       <button style="width: 100%;" (click)="startBrew()">START</button>
     </form>
-    <div class="machine-ejector"></div>
+    <div>
+      <div class="machine-ejector">
+        <div class="animation">
+          <app-coffee-animation-res></app-coffee-animation-res>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="machine-stand"></div>
+  <div class="machine-stand">
+    <div class="cup">
+      <app-cup-animation></app-cup-animation>
+    </div>
+  </div>
   <div class="machine-base">
     <div class="machine-base-trapeze"></div>
     <div class="machine-base-rect"></div>

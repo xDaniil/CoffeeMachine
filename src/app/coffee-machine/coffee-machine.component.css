@@ -86,3 +86,13 @@
 .machine-button-start {
   float: right;
 }
+
+.cup {
+  float: left;
+  z-index: 10 !important;
+  margin-left: 85px;
+}
+
+.animation {
+  z-index: 0;
+}

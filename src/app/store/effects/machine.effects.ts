@@ -43,7 +43,8 @@ export class MachineEffects {
     ofType<StartedBrew>(EMachineActions.StartedBrew),
     tap(() => this._store.dispatch(new SaveStartTime(new Date()))),
     delay(10000),
-    map(() => new FinishBrew()),
+    map(() =>
+    new FinishBrew()),
   );
 
   @Effect()

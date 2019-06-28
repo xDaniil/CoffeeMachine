@@ -16,6 +16,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/effects/user.effects';
 import { FormsModule } from '@angular/forms';
 import { MachineEffects } from './store/effects/machine.effects';
+import { CoffeeAnimationResComponent } from './coffee-animation-res/coffee-animation-res.component';
+import { CupAnimationComponent } from './cup-animation/cup-animation.component';
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return localStorageSync({
@@ -32,7 +34,9 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     AppComponent,
     MachineResComponent,
     UserResComponent,
-    CoffeeMachineComponent
+    CoffeeMachineComponent,
+    CoffeeAnimationResComponent,
+    CupAnimationComponent
   ],
   imports: [
     BrowserModule,
