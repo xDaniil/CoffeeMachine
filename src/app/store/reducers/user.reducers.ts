@@ -1,9 +1,10 @@
 import { IUserState } from '../state/user.state';
 import { initialUserState } from '../state/user.state';
 import { EUserActions, UserActions } from '../actions/user.actions';
-import { createFormStateReducerWithUpdate, updateGroup, validate } from 'ngrx-forms';
+import { createFormGroupState, createFormStateReducerWithUpdate, updateGroup, validate } from 'ngrx-forms';
 import { IUser } from '../../models/user.interface';
 import { greaterThanOrEqualTo, required } from 'ngrx-forms/validation';
+import { FormNames } from '../forms/formNames';
 
 const userResFormReducer = createFormStateReducerWithUpdate<IUser>(updateGroup<IUser>({
   money: validate([required, greaterThanOrEqualTo(0)]),
@@ -34,10 +35,7 @@ export const userReducers = (
     case EUserActions.InsertCoinSuccess: {
       return {
         ...state,
-        value: {
-          ...(state.value),
-          money: state.value.money - 1,
-        }
+        ...createFormGroupState<IUser>(FormNames.UserResourcesForm, { money: state.value.money - 1 })
       };
     }
     default:

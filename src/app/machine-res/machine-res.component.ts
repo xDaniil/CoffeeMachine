@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { IAppState } from '../store/state/app.state';
-import { getResources } from '../store/selectors/machineRes.selector';
+import { getResources } from '../store/selectors/machine.selectors';
 import { Observable } from 'rxjs';
 import { FormGroupState } from 'ngrx-forms';
 import { ICoffeeResources } from '../models/coffeeResources.interface';

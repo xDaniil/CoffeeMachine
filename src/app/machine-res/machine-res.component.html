@@ -1,38 +1,53 @@
+<div>
 <h1>Machine res:</h1>
 <form novalidate [ngrxFormState]="(formState$ | async)">
-  <label>
+  <div class="form-group">
+  <label for="Arabica"></label>
     Arabica:
     <input type="number"
+    class="form-control form-control-sm"
+    id="Arabica"
     [ngrxFormControlState]="(formState$ | async).controls.arabica">
-  </label>
-  <br>
-  <label>
+  </div>
+  <div class="form-group">
+  <label for="Arabusta"></label>
     Arabusta:
     <input type="number"
+    class="form-control form-control-sm"
+    id="Arabusta"
     [ngrxFormControlState]="(formState$ | async).controls.arabusta">
-  </label>
-  <br>
-  <label>
+  </div>
+  <div class="form-group">
+  <label for="Cream"></label>
     Cream:
     <input type="number"
+    class="form-control form-control-sm"
+    id="Cream"
     [ngrxFormControlState]="(formState$ | async).controls.cream">
-  </label>
-  <br>
-  <label>
+  </div>
+  <div class="form-group">
+  <label for="Sugar"></label>
     Sugar:
     <input type="number"
+    class="form-control form-control-sm"
+    id="Sugar"
     [ngrxFormControlState]="(formState$ | async).controls.sugar">
-  </label>
-  <br>
-  <label>
+  </div>
+  <div class="form-group">
+  <label for="Plastic"></label>
     Plastic cups:
     <input type="number"
+    class="form-control form-control-sm"
+    id="Plastic"
     [ngrxFormControlState]="(formState$ | async).controls.plasticCup">
-  </label>
-  <br>
-  <label>
+  </div>
+  <div class="form-group">
+  <label for="Cardboard"></label>
     Cardboard cups:
     <input type="number"
+    class="form-control form-control-sm"
+    id="Cardboard"
     [ngrxFormControlState]="(formState$ | async).controls.cardCup">
-  </label>
+  </div>
 </form>
+</div>

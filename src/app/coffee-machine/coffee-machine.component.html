@@ -1,0 +1,49 @@
+<div class="machine">
+  <div class="machine-top">
+    <form class="machine-display">
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="coffeeType" id="typeRadio1" [value]="1" [(ngModel)]="params.coffeeType">
+          <label class="form-check-label" for="typeRadio1">Arabica</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="coffeeType" id="typeRadio2" [value]="2" [(ngModel)]="params.coffeeType">
+          <label class="form-check-label" for="typeRadio2">Arabusta</label>
+        </div>
+      </div>
+      <div class="form-group" style="display: contents;">
+        <label for="sugarInput">Sugar:</label>
+        <input type="number" class="" name="sugar" id="sugarInput" [(ngModel)]="params.sugar">
+      </div>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="creamCheck" name="cream" [(ngModel)]="params.isCreamed">
+          <label class="form-check-label" for="creamCheck">Cream</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input type="checkbox" class="form-check-input" id="cupCheck" name="cup" [(ngModel)]="params.isCupPlastic">
+          <label class="form-check-label" for="cupCheck">Plastic cup</label>
+        </div>
+      </div>
+      <button style="width: 100%;" (click)="startBrew()">START</button>
+    </form>
+    <div>
+      <div class="machine-ejector">
+        <div class="animation">
+          <app-coffee-animation-res></app-coffee-animation-res>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="machine-stand">
+    <div class="cup">
+      <app-cup-animation></app-cup-animation>
+    </div>
+  </div>
+  <div class="machine-base">
+    <div class="machine-base-trapeze"></div>
+    <div class="machine-base-rect"></div>
+  </div>
+</div>

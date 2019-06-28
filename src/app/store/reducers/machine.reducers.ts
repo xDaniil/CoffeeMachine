@@ -46,10 +46,22 @@ export const machineReducers = (
       };
     }
     case EMachineActions.StartedBrew: {
+      const key = action.payload.coffeeType === 1 ? 'arabica' : 'arabusta';
+      const creaming = action.payload.isCreamed ? 1 : 0;
+      const cup = action.payload.isCupPlastic ? 'plasticCup' : 'cardCup';
       return {
         ...state,
         isRunning: true,
         isCupInside: true,
+        resources: {
+        ...createFormGroupState<ICoffeeResources>(FormNames.MachineResourcesForm, {
+          ...state.resources.value,
+          [key]: state.resources.value[key] - 1,
+          sugar: state.resources.value.sugar - action.payload.sugar,
+          cream: state.resources.value.cream - creaming,
+          [cup]: state.resources.value[cup] - 1,
+        })
+       }
       };
     }
     case EMachineActions.RemoveCup: {
@@ -62,6 +74,13 @@ export const machineReducers = (
       return {
         ...state,
         isRunning: false,
+        isCoinInserted: false,
+      };
+    }
+    case EMachineActions.SaveStartTime: {
+      return {
+        ...state,
+        brewStartTime: action.payload
       };
     }
     default:

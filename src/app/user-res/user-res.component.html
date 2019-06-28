@@ -1,10 +1,13 @@
-<h1>User res:</h1>
-<form novalidate [ngrxFormState]="(formState$ | async)">
-  <label>
-    Money:
-    <input type="number"
-    [ngrxFormControlState]="(formState$ | async).controls.money">
-  </label>
-</form>
-
-<h3>{{(formState$ | async).value.money}}</h3>
+<div>
+  <h1>User res:</h1>
+  <div>
+  <form novalidate [ngrxFormState]="(formState$ | async)">
+    <label>Money:</label>
+        <input type="number"
+        class="form-control form-control-sm"
+        [ngrxFormControlState]="(formState$ | async).controls.money">
+  </form>
+  <button (click)="insertCoin()">Insert Coin</button>
+  <button (click)="removeCup()">Remove Cup</button>
+  </div>
+</div>
